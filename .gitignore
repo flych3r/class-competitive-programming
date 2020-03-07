@@ -1,0 +1,4 @@
+*.bin
+*.o
+*.inpynb
+.ipynb_checkpoints
