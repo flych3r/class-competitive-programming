@@ -2,3 +2,4 @@
 *.o
 *.inpynb
 .ipynb_checkpoints
+.vscode
