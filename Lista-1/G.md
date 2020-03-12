@@ -1,44 +1,56 @@
-# G - Fourier's Lines
+# G - Anagram checker
 
-Joseph Fourier was a great mathematician and physicist and is well known for his mathematic series. Among all the nineteen children in his family, Joseph was the youngest and the smartest. He began to show his interest in mathematics when he was very young. After he grew up, he often corresponded with C. Bonard (a professor of mathematics at Auxerre) by exchanging letters.
+It is often fun to see if rearranging the letters of a name gives an amusing anagram. For example, the
+letters of ‘WILLIAM SHAKESPEARE’ rearrange to form ‘SPEAK REALISM AWHILE’.
 
-In one letter written to Bonard, Fourier asked a question: how to draw 17 lines on a plane to make exactly 101 crossings, where each crossing belongs to exactly two lines. Obviously, this is an easy problem, and Figure-1 is a solution that satisfies his requirement. Now the problem for you is a universal one. Can we draw N lines on a plane to make exactly M crossings, where each crossing belongs to exactly two lines? If we can, how many pieces, at most, can these lines cut the plane into?
+Write a program that will read in a dictionary and a list of phrases and determine which words from
+the dictionary, if any, form anagrams of the given phrases. Your program must find all sets of words in
+the dictionary which can be formed from the letters in each phrase. Do not include the set consisting
+of the original words. If no anagram is present, do not write anything, not even a blank line.
 
 ## Input
 
-The input may have several sets of test data. Each set is one line containing two integers N and M (1 <= N <= 100, 0 <= M <= 10000), separated by a space. The test data is followed by a line containing two zeros, which indicates the end of input and should not be processed as a set of data.
+Input will consist of two parts. The first part is the dictionary, the second part is the set of phrases
+for which you need to find anagrams. Each part of the file will be terminated by a line consisting of a
+single ‘#’. The dictionary will be in alphabetic order and will contain up to 2000 words, one word per
+line. The entire file will be in upper case, and no dictionary word or phrase will contain more than 20
+letters. You cannot assume the language being used is English.
 
 ## Output
 
-Output one line for each set of input in the following format:
-
-Case i: N lines cannot make exactly M crossings.
-
-if the drawing of these lines is impossible;
-
-or:
-
-Case i: N lines with exactly M crossings can cut the plane into K pieces at most.
-
-Note: Even if N or M equals to one, you should use the words "lines" and "crossings" in your output.
+Output will consist of a series of lines. Each line will consist of the original phrase, a space, an equal
+sign (=), another space, and the list of words that together make up an anagram of the original phrase,
+separated by exactly one space. These words must appear in alphabetic sequence.
 
 ## Sample Input
 
 ```
-4 3
-4 6
-4 2
-5 11
-17 101
-0 0
+ABC
+AND
+DEF
+DXZ
+K
+KX
+LJSRT
+LT
+PT
+PTYYWQ
+Y
+YWJSRQ
+ZD
+ZZXY
+#
+ZZXY ABC DEF
+SXZYTWQP KLJ YRTD
+ZZXY YWJSRQ PTYYWQ ZZXY
+#
 ```
 
-## Sampel Output
+## Sample Output
 
 ```
-Case 1: 4 lines with exactly 3 crossings can cut the plane into 8 pieces at most.
-Case 2: 4 lines with exactly 6 crossings can cut the plane into 11 pieces at most.
-Case 3: 4 lines cannot make exactly 2 crossings.
-Case 4: 5 lines cannot make exactly 11 crossings.
-Case 5: 17 lines with exactly 101 crossings can cut the plane into 119 pieces at most.
+SXZYTWQP KLJ YRTD = DXZ K LJSRT PTYYWQ
+SXZYTWQP KLJ YRTD = DXZ K LT PT Y YWJSRQ
+SXZYTWQP KLJ YRTD = KX LJSRT PTYYWQ ZD
+SXZYTWQP KLJ YRTD = KX LT PT Y YWJSRQ ZD
 ```

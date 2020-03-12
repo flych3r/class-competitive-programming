@@ -1,36 +1,54 @@
-# C - DNA Sorting
+# C - Ecological Premium
 
-One measure of 'unsortedness' in a sequence is the number of pairs of entries that are out of order with respect to each other. For instance, in the letter sequence 'DAABEC', this measure is 5, since D is greater than four letters to its right and E is greater than one letter to its right. This measure is called the number of inversions in the sequence. The sequence 'AACEDGG' has only one inversion (E and D)---it is nearly sorted---while the sequence 'ZWQM' has 6 inversions (it is as unsorted as can be---exactly the reverse of sorted).
+German farmers are given a premium depending on the conditions at their farmyard. Imagine the
+following simplified regulation: you know the size of each farmer’s farmyard in square meters and the
+number of animals living at it. We won’t make a difference between different animals, although this is
+far from reality. Moreover you have information about the degree the farmer uses environment-friendly
+equipment and practices, expressed in a single integer greater than zero. The amount of money a
+farmer receives can be calculated from these parameters as follows. First you need the space a single
+animal occupies at an average. This value (in square meters) is then multiplied by the parameter that
+stands for the farmer’s environment-friendliness, resulting in the premium a farmer is paid per animal
+he owns. To compute the final premium of a farmer just multiply this premium per animal with the
+number of animals the farmer owns.
 
-You are responsible for cataloguing a sequence of DNA strings (sequences containing only the four letters A, C, G, and T). However, you want to catalog them, not in alphabetical order, but rather in order of 'sortedness', from 'most sorted' to 'least sorted'. All the strings are of the same length.
 
-## Input
+# Input
 
-The first line contains two integers: a positive integer n (0 < n <= 50) giving the length of the strings; and a positive integer m (0 < m <= 100) giving the number of strings. These are followed by m lines, each containing a string of length n.
+The first line of input contains a single positive integer n (< 20), the number of test cases. Each test
+case starts with a line containing a single integer f (0 < f < 20), the number of farmers in the test
+case. This line is followed by one line per farmer containing three positive integers each: the size of
+the farmyard in square meters, the number of animals he owns and the integer value that expresses the
+farmers environment-friendliness. Input is terminated by end of file. No integer in the input is greater
+than 100000 or less than 0.
 
-## Output
+# Output
 
-Output the list of input strings, arranged from 'most sorted' to 'least sorted'. Since two strings can be equally sorted, then output them according to the orginal order.
+For each test case output one line containing a single integer that holds the summed burden for Germany’s budget, which will always be a whole number. Do not output any blank lines.
 
-## Sample Input
+# Sample Input
 
 ```
-10 6
-AACATGAAGG
-TTTTGGCCAA
-TTTGGCCAAA
-GATCAGATTT
-CCCGGGGGGA
-ATCGATGCAT
+3
+5
+1 1 1
+2 2 2
+3 3 3
+2 3 4
+8 9 2
+3
+9 1 8
+6 12 1
+8 1 1
+3
+10 30 40
+9 8 5
+100 1000 70
 ```
 
 ## Sample Output
 
 ```
-CCCGGGGGGA
-AACATGAAGG
-GATCAGATTT
-ATCGATGCAT
-TTTTGGCCAA
-TTTGGCCAAA
+38
+86
+7445
 ```

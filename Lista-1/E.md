@@ -1,35 +1,46 @@
-# E - Cowties
+# E - Jumping Mario
 
-N cows (3 <= N <= 100) are eating grass in the middle of a field. So that they don't get lost, Farmer John wants to tie them together in a loop so that cow i is attached to cows i-1 and i+1. Note that cow N will be tied to cow 1 to complete the loop.
+Mario is in the final castle. He now needs to
+jump over few walls and then enter the Koopa’s
+Chamber where he has to defeat the monster in
+order to save the princess. For this problem,
+we are only concerned with the “jumping over
+the wall” part. You will be given the heights
+of N walls from left to right. Mario is currently
+standing on the first wall. He has to jump to the
+adjacent walls one after another until he reaches
+the last one. That means, he will make (N − 1)
+jumps. A high jump is one where Mario has to
+jump to a taller wall, and similarly, a low jump is one where Mario has to jump to a shorter wall. Can
+you find out the total number of high jumps and low jumps Mario has to make?
 
-Each cow has a number of grazing spots she likes and will only be happy if she ends up situated at one of these spots. Given that Farmer John must ensure the happiness of his cows when placing them, compute the shortest length of rope he needs to tie them all in a loop. It is possible for different parts of the loop to cross each other.
+# Input
 
-## Input
+The first line of input is an integer T (T < 30) that indicates the number of test cases. Each case starts
+with an integer N (0 < N < 50) that determines the number of walls. The next line gives the height
+of the N walls from left to right. Each height is a positive integer not exceeding 10.
 
-* Line 1: The integer N.
+# Output
 
-* Lines 2..N+1: Each line describes one cow using several space-separated integers. The first integer is the number of locations S (1 <= S <= 40) which are preferred by that cow. This is followed by 2*S integers giving the (x,y) coordinates of these locations respectively. The coordinates lie in the range -100..100.
+For each case, output the case number followed by 2 integers, total high jumps and total low jumps,
+respectively. Look at the sample for exact format.
 
-## Output
-
-A single line containing a single integer, 100 times the minimum length of rope needed (do not perform special rounding for this result).
-
-## Sample Input 
+## Sample Input
 
 ```
-4
-1 0 0
-2 1 0 2 0
-3 -1 -1 1 1 2 2
-2 0 1 0 2
+3
+8
+1 4 2 2 3 5 3 4
+1
+9
+5
+1 2 3 4 5
 ```
 
 ## Sample Output
 
 ```
-400
+Case 1: 4 2
+Case 2: 0 0
+Case 3: 4 0
 ```
-
-### Hint
-
-[Cow 1 is located at (0,0); cow 2 at (1,0); cow 3 at (1,1); and cow 4 at (0,1).]

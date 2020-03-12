@@ -4,8 +4,12 @@ using namespace std;
 
 int main()
 {
-    int a,b;
-    cin >> a >> b;
-    cout << a+b << endl;
-    return 0;
+    int t, m, n;
+    cin >> t;
+    while(t)
+    {
+        cin >> n >> m;
+        cout << (n/3) * (m/3) << endl;
+        t--;
+    }
 }

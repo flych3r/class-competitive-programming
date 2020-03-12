@@ -1,34 +1,42 @@
-# D - Vertical Histogram
+# D - Summing Digits
 
-Write a program to read four lines of upper case (i.e., all CAPITAL LETTERS) text input (no more than 72 characters per line) from the input file and print a vertical histogram that shows how many times each letter (but not blanks, digits, or punctuation) appears in the all-upper-case input. Format your output exactly as shown.
+For a positive integer n, let f(n) denote the
+sum of the digits of n when represented in base
+10. It is easy to see that the sequence of numbers n, f(n), f(f(n)), f(f(f(n))), . . . eventually
+becomes a single digit number that repeats forever. Let this single digit be denoted g(n)
+.
+For example, consider n = 1234567892.
+Then:
+* f(n) = 1+2+3+4+5+6+7+8+9+2 = 47
+* f(f(n)) = 4 + 7 = 11
+* f(f(f(n))) = 1 + 1 = 2
+* Therefore, g(1234567892) = 2.
 
 ## Input
 
-Lines 1..4: Four lines of upper case text, no more than 72 characters per line.
+Each line of input contains a single positive integer n at most 2,000,000,000. Input is terminated
+by n = 0 which should not be processed.
 
 ## Output
 
-Lines 1..??: Several lines with asterisks and spaces followed by one line with the upper-case alphabet separated by spaces. Do not print unneeded blanks at the end of any line. Do not print any leading blank lines.
+For each such integer, you are to output a single
+line containing g(n).
 
 ## Sample Input
+
 ```
-THE QUICK BROWN FOX JUMPED OVER THE LAZY DOG.
-THIS IS AN EXAMPLE TO TEST FOR YOUR
-HISTOGRAM PROGRAM.
-HELLO!
+2
+11
+47
+1234567892
+0
 ```
 
 ## Sample Output
 
 ```
-                            *
-        *                   *
-        *                   *     *   *
-        *                   *     *   *
-*       *     *             *     *   *
-*       *     * *     * *   *     * * *
-*       *   * * *     * *   * *   * * * *
-*     * * * * * *     * * * * *   * * * *     * *
-* * * * * * * * * * * * * * * * * * * * * * * * * *
-A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+2
+2
+2
+2
 ```

@@ -1,40 +1,54 @@
-# F - Ride to School
+# F - Zeros and Ones
 
-Many graduate students of Peking University are living in Wanliu Campus, which is 4.5 kilometers from the main campus – Yanyuan. Students in Wanliu have to either take a bus or ride a bike to go to school. Due to the bad traffic in Beijing, many students choose to ride a bike.
-
-We may assume that all the students except "Charley" ride from Wanliu to Yanyuan at a fixed speed. Charley is a student with a different riding habit – he always tries to follow another rider to avoid riding alone. When Charley gets to the gate of Wanliu, he will look for someone who is setting off to Yanyuan. If he finds someone, he will follow that rider, or if not, he will wait for someone to follow. On the way from Wanliu to Yanyuan, at any time if a faster student surpassed Charley, he will leave the rider he is following and speed up to follow the faster one.
-
-We assume the time that Charley gets to the gate of Wanliu is zero. Given the set off time and speed of the other students, your task is to give the time when Charley arrives at Yanyuan.
+Given a string of 0’s and 1’s up to 1000000 characters long and indices i and j, you are to answer
+a question whether all characters between position min(i, j) and position max(i, j) (inclusive) are the
+same.
 
 ## Input
 
-There are several test cases. The first line of each case is N (1 <= N <= 10000) representing the number of riders (excluding Charley). N = 0 ends the input. The following N lines are information of N different riders, in such format:
-
-Vi [TAB] Ti
-
-Vi is a positive integer <= 40, indicating the speed of the i-th rider (kph, kilometers per hour). Ti is the set off time of the i-th rider, which is an integer and counted in seconds. In any case it is assured that there always exists a nonnegative Ti.
+There are multiple cases on input. The first line of each case gives a string of 0’s and 1’s. The next
+line contains a positive integer n giving the number of queries for this case. The next n lines contain
+queries, one per line. Each query is given by two non-negative integers, i and j. For each query, you
+are to print ‘Yes’ if all characters in the string between position min(i, j) and position max(i, j) are the same, and ‘No’ otherwise.
 
 ## Output
-
-Output one line for each case: the arrival time of Charley. Round up (ceiling) the value when dealing with a fraction.
+Each case on output should start with a heading as in the sample below. The input ends with an empty
+string that is a line containing only the new line character, this string should not be processed. The
+input may also with end of file. So keep check for both.
 
 ## Sample Input
 
 ```
-4
-20	0
-25	-155
-27	190
-30	240
-2
-21	0
-22	34
-0
+0000011111
+3
+0 5
+4 2
+5 9
+01010101010101010101010101111111111111111111111111111111111110000000000000000
+5
+4 4
+25 60
+1 3
+62 76
+24 62
+1
+1
+0 0
 ```
 
 ## Sample Output
 
 ```
-780
-771
+Case 1:
+No
+Yes
+Yes
+Case 2:
+Yes
+Yes
+No
+Yes
+No
+Case 3:
+Yes
 ```
