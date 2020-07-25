@@ -1,5 +1,6 @@
 *.bin
 *.o
-*.inpynb
+*.out
+*.ipynb
 .ipynb_checkpoints
 .vscode
