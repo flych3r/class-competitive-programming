@@ -11,8 +11,8 @@ int main()
     while(t){
         int n;
         cin >> n;
-	    vector<int> A(n);
-        int preSum[n];
+	    vector<long long> A(n);
+        long long preSum[n];
         for(int i = 0; i < n; i++)
             cin >> A[i];
 
@@ -23,7 +23,7 @@ int main()
             preSum[i] = preSum[i - 1] + A[i - 1];
         }
 
-        int m = INT_MIN;
+        long long m = INT_MIN;
         for(int i = 0; i < n; i++){
             m = max(m, A[i] * (n - i) - preSum[i]);
         }
