@@ -6,10 +6,41 @@ using namespace std;
 const int MAXSIZE=100002;
 #define y1 aasdfasdfasdf
 
+typedef long long ll;
 
 int solve(int N,int K,int A[MAXSIZE])
 {
-	//write code here
+	int table[K + 1];
+	for(size_t i = 1; i <= K; i++)
+	{
+		table[i] = 0;
+	}
+	ll min_distinct = LLONG_MAX;
+
+	ll p = 0, c = 0;
+
+	for (ll i = 0; i < N; i++)
+	{
+		table[A[i]]++;
+
+		if(table[A[i]] <= 1) {
+			c++;
+		}
+
+		if(c == K) {
+			while(table[A[p]] > 1) {
+				if(table[A[p]] > 1) {
+					table[A[p]] -= 1;
+				}
+
+				p++;
+			}
+
+			min_distinct = min(min_distinct, i - p + 1);
+		}
+	}
+
+	return min_distinct;
 }
 
 int main()
